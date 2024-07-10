@@ -4,12 +4,26 @@
     <title>App 配置服务</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-        #message { font-size: 24px; color: #333; }
+        #message, #time { font-size: 24px; color: #333; margin-bottom: 10px; }
         #data { display: none; }
     </style>
 </head>
 <body>
-    <div id="message">App 配置服务正在运行</div>
+    <div id="message"> 见听 App 配置服务正在运行 </div>
+    <div id="time"></div>
     <div id="data">eyJhbGciOiJIUzI1NiJ9.eyJ2ZXJzaW9uIjoiMS4yLjMiLCJzZXJ2ZXJzIjpbImh0dHBzOi8vc2VydmVyMS5jb20iLCJodHRwczovL3NlcnZlcjIuY29tIl0sImZlYXR1cmVzIjp7ImZlYXR1cmVBIjp0cnVlLCJmZWF0dXJlQiI6ZmFsc2V9fQ.8J7xOUWXWwgq6Xd9uGyiVImpYt9uTmmS4xPnYHpgB5Q</div>
+
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var timeString = now.getHours().toString().padStart(2, '0') + ':' + 
+                             now.getMinutes().toString().padStart(2, '0') + ':' + 
+                             now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('time').textContent = '当前时间 ' + timeString;
+        }
+
+        updateTime(); // 立即更新一次
+        setInterval(updateTime, 1000); // 每秒更新一次
+    </script>
 </body>
 </html>
