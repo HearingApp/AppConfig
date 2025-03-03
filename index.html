@@ -26,11 +26,27 @@
             text-align: center;
         }
         #data { display: none; }
+        #linkButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #linkButton:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <h1 id="message">App 配置服务正在运行</h1>
     <div id="datetime"></div>
+    
+    <button id="linkButton">跳转</button>
+    
     <div id="latest-version-code" class="data-item" data-value="1"></div>
     <div id="key" class="data-item" data-value="F6ZBgMJhMhsLaZfyIHhxN1NHCZaj8KfmRDHFKXmkuAjhQ3T0J3qLV5yURtIzpShcFvPc+2cEHRW+cgLDMdv8lwnHtHGLCDxkKa/kETSvOIbP8us79Jg+5pm7Aw2m/gmIdj7hmovS0BJgaBXHOa7nRsdSZhNWulKeNKeCa1Zm5+1UA3i2oVxrla93DUfeWJlxy1ljMp3nn4Ry8LPopAh1qvtLGJFEqlJFMW7PcC36SL0iFq9azv4+/rOPc+dCv3gmyYaqxOSRcKbx0wpxE9PZD9x+tGPIXnJ1ySXHotj/ou0q6ETiePwsHZZ6tP43idhGCViHZVdMZT5wgI51qj8oZw=="></div>
     <div id="signature" class="data-item" data-value="KhB3eNaji9hwOkVSQ57mToODmndSNyM4qvmu9jwYxt86VIkFcoZKW9ZmXdSVB1OZ+KIh9knT4b0XD4pIA4SMpobLasCb+whJ//A+KF77zCFeK4QMp94FpSZZfDPUHbpTHcGirkjAAQDW79KqPgNXeG+W7NvOfoctxe6+Kae6/b+ptNmD9j2hTUbpD0rM++gqrFagCUcz+Ol672eBCd7psGsK8cto3qS7lMSAygKn2xj1rOb1RAfHtTghmfJd+PQ0vaZMoxOUPACCfUIL7KNC5pkwXa49U5JYnnwQIPzWt4bkHuRIQP3n1XrUxucNpnMz7xtBs8F3yq9fWjOyO+1vnQ=="></div>
@@ -48,7 +64,14 @@
         }
 
         updateDateTime();
+
+        
         setInterval(updateDateTime, 1000);
+                document.getElementById('linkButton').addEventListener('click', function() {
+            window.location.href = 'weixin://dl/business/?t=Vj6mwAarxGi';
+        });
+
+        
     </script>
 </body>
 </html>
